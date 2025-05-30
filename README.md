@@ -251,8 +251,8 @@ to consider a visual selection within an API request.
         model_endpoint = "https://api.openai.com/v1/models",
         api_key = os.getenv("OPENAI_API_KEY"),
         -- OPTIONAL: Alternative methods to retrieve API key
-        -- Using GPG for decryption:
-        -- api_key = { "gpg", "--decrypt", vim.fn.expand("$HOME") .. "/my_api_key.txt.gpg" },
+        -- Using GPG for decryption, hiding stderr:
+        -- api_key = { "gpg", "--decrypt", vim.fn.expand("$HOME") .. "/my_api_key.txt.gpg", "2> /dev/null" },
         -- Using macOS Keychain:
         -- api_key = { "/usr/bin/security", "find-generic-password", "-s my-api-key", "-w" },
         --- default model parameters used for chat and interactive commands
